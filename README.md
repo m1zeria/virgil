@@ -21,7 +21,7 @@ Virgil is a capability-based microkernel. Unlike monolithic kernels (Linux) or t
 *   **Ring 0 — The Pilot (Kernel):** Minimal and trusted. Handles memory, scheduling, IPC, and capability checks.
 *   **Ring 1 — The Copilot (Privileged Servers):** Rich capabilities. Includes the Styx (GUI Cockpit), the Janitor (process/memory cleanup), and an upcoming neurofeedback loop.
 *   **Ring 2 — Air Hostess (Drivers):** Gated MMIO access, UART, VirtIO-GPU.
-*   **Ring 3 — Passengers (Apps):** Minimal capabilities. Can only talk to Ring 1 servers. Cannot touch hardware.
+*   **Ring 3 — Passengers (Apps):** Minimal capabilities. Can only talk to Ring 1 servers, cannot touch hardware.
 
 ## The Styx (The Cockpit)
 The Styx is a real-time, graphical dashboard (rendered in bare-metal Rust using `embedded-graphics`). It features:
@@ -39,7 +39,7 @@ The Styx is a real-time, graphical dashboard (rendered in bare-metal Rust using 
 *   No real hardware (Runs on QEMU RISC-V `virt` machine with OpenSBI).
 *   No filesystem (A single store object / capability tree instead).
 *   No networking, no SMP, no POSIX, no Linux userspace compatibility.
-*   No live EEG stream compatibility/
+*   No live EEG stream compatibility.
 
 ## Getting Started
 *Read the [Proposition](docs/PROPOSITION.md) and the [Field Manual](docs/FIELD_MANUAL.md) to understand the design philosophy.*
