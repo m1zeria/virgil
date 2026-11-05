@@ -1,0 +1,11 @@
+[package]
+name = "virgil-kernel"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "virgil-kernel"
+test = false
+bench = false
+
+[dependencies]
